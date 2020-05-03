@@ -69,6 +69,6 @@ def detalles_juegos(identificador):
     else:
         return render_template("detalle_juego.html",nombre=nombre,detalles=detalles)
 
-
+##
 
 app.run(debug=True)
