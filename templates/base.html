@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<style>
+
+    /* Alineacion centrada */
+
+    .align_centrado {
+        text-align: center;
+    }
+
+    /* Alineacion lista juegos */
+
+    .align_lista_juegos {
+        margin-left: 10px;
+    }
+
+    /* Alineacion para la alineacion de la tabla /listajuegos  */
+
+    .table {
+        width: 100%;
+        border: 1px solid #999;
+        text-align: left;
+        border-collapse: collapse;
+        margin: 0 0 1em 0;
+        caption-side: top;
+    }
+    .caption, td, th {
+       padding: 0.3em;
+    }
+    .th, td {
+       border-bottom: 1px solid #999;
+       width: 25%;
+    }
+
+    /* ------------------------------------------------------- */
+
+
+</style>
+<title>{% block title %}{% endblock %}</title>
+<meta charset="utf-8" />
+</head>
+ 
+<body>
+    {% block content %}{% endblock %}
+</body>
+</html>

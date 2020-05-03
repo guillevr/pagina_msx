@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Página principal{% endblock %}
+{% block content %}
+    <div class="align_centrado">
+        <h2>Introduzca una palabra:</h2>
+        <form action="/juegos" method="post">
+            <input type="text" name="cadena"/>
+            <input type="submit" value="Enviar"/>
+        </form>
+    </div>
+
+    </br>
+    </br>
+    </br>
+
+    <div class="align_centrado">
+        <h2>Seleccione una categoría: </h2>
+        <select action="/juegos" method="post">
+            {% for cat in categorias -%}
+            <option value="{{cat}}" name="{{cat}}">{{cat}}</option>
+            {% endfor -%}
+        </select>
+
+    </div>
+
+
+{% endblock %}
+
+ 
+
+
+
+
+
+
