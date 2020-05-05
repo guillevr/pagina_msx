@@ -1,12 +1,12 @@
 from flask import Flask, render_template,abort,request
 app = Flask(__name__)	
 
-import json
+import json,os
 with open("msx.json") as fichero:
 	datos=json.load(fichero)
 
 
-### Para desplegar la app en heroku
+## Para el despliegue de HEROKU
 port=os.environ["PORT"]
 
 
@@ -153,5 +153,5 @@ def detalles_juegos(identificador):
         return render_template("template5.html",nombre=nombre,detalles=detalles)
 
 
-
+## Sirve para que escuche por cualquier puerto.
 app.run('0.0.0.0',int(port), debug=True)
