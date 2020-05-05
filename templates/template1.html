@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}Página principal{% endblock %}
+{% block content %}
+    <div class="align_centrado">
+        <h2>Búsqueda por cadena: </h2>
+        <form action="/juegos" method="post">
+            <input type="text" name="cadena"/>
+            <input type="submit" value="Enviar"/>
+        </form>
+
+    </div>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+ 
+    <div class="align_centrado">
+        <h2>Búsqueda por cadena y categoría: </h2>
+        <form action="/juegos" method="post">
+            <input type="text" name="cad" required/>
+            </br>
+            </br>
+            <select name="ncat">
+                {% for cat in categorias -%}
+                    <option value="{{cat}}">{{cat}}</option>
+                {% endfor -%}
+            </select>
+            </br>
+            </br>
+            <input type="submit" value="Enviar"/>
+        </form>
+    </div>
+
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+
+    <div class="align_centrado">
+        <h2>Búsqueda solo por categoría: </h2>
+        <form action="/juegos" method="post">
+            <!-- bscat -> busqueda solo por categoria-->
+            <select name="bscat">
+                {% for cat in categorias -%}
+                    <option value="{{cat}}">{{cat}}</option>
+                {% endfor -%}
+            </select>
+            </br>
+            </br>
+            <input type="submit" value="Enviar"/>
+        </form>
+    </div>
+
+{% endblock %}
+
+ 
+
+
+
+
+
+

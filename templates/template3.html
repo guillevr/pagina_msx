@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}Lista juegos por categoría.{% endblock %}
+{% block content %}
+
+    {% if not lista3 and not nj %}
+        </br>
+    
+        <div class="align_centrado">
+            <p>No existe ningún juego que empieze por <strong><ins>{{cadena}}</ins></strong> .</p>
+        </div>
+
+        <br/>
+        <br/>
+        <br/>
+        <div class="align_centrado">
+            <a href="/juegos" align="center">Volver a la página principal</a>
+        </div>
+        
+
+    {% elif not lista3 %}
+        </br>
+
+        <div class="align_centrado">
+            <p>Se han encontrado <strong><ins>{{nj}}</ins></strong> juegos que empieze por <strong><ins>{{cadena}}</ins></strong></p>
+            <p>pero no coinciden con la categoría <strong><ins>{{categoria}}</ins></strong></p>
+        </div>
+
+    {% else %}    
+        </br>
+        <table align="center">
+            
+            <caption><h3>Se han encontrado <ins>{{njuegos}}</ins> juegos que empiezan por <ins>{{cadena}}</ins> de la categoría <ins>{{nc}}</ins>:</h3></caption>
+
+            <tr>
+                <td><strong>Nº</strong></td>
+                <td><strong>Título</strong></td>
+                <td><strong>Desarrollador</strong></td>
+                <td><strong>Más info</strong></td>
+            </tr>
+
+            {% for datos in lista3-%}
+                <tr>
+                    <td><strong>{{datos.numero}}</strong></td>
+                    <td>{{datos.nombre}}</td>
+                    <td>{{datos.desarrollador}}</td>
+                    <td><a href="/juego/{{datos.id}}">Detalle</a></td>
+                </tr>
+            {%endfor-%}
+
+        </table>
+        <br/>
+        <br/>
+        <br/>
+        <div class="align_centrado">
+            <a href="/juegos" align="center">Volver a la página principal</a>
+        </div>
+        
+
+    {% endif %}
+
+{% endblock %}
+

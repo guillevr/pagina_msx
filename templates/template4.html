@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Lista de juegos de la categoría {{cat}}.{% endblock %}
+{% block content %}
+    </br>
+    <table align="center">
+        
+        <caption><h3>Se han encontrado <ins>{{njuegos}}</ins> juegos de la categoria <ins>{{cat}}</ins> :</h3></caption>
+        <tr>
+            <td><strong>Nº</strong></td>
+            <td><strong>Título</strong></td>
+            <td><strong>Desarrollador</strong></td>
+            <td><strong>Más info</strong></td>
+        </tr>
+        {% for datos in lista5-%}
+            <tr>
+                <td><strong>{{datos.numero}}</strong></td>
+                <td>{{datos.nombre}}</td>
+                <td>{{datos.desarrollador}}</td>
+                <td><a href="/juego/{{datos.id}}">Detalle</a></td>
+            </tr>
+        {%endfor-%}
+    </table>
+    <br/>
+    <br/>
+    <br/>
+    <div class="align_centrado">
+        <a href="/juegos" align="center">Volver a la página principal</a>
+    </div>
+        
+
+{% endblock %}
+
