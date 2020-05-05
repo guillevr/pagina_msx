@@ -6,6 +6,9 @@ with open("msx.json") as fichero:
 	datos=json.load(fichero)
 
 
+### Para desplegar la app en heroku
+port=os.environ["PORT"]
+
 
 ## Programa para la página de inicio. 
 @app.route('/',methods=["GET","POST"])
@@ -151,4 +154,4 @@ def detalles_juegos(identificador):
 
 
 
-app.run(debug=True)
+app.run('0.0.0.0',int(port), debug=True)
